@@ -1,6 +1,7 @@
 ## Source Kafka connector
 
 This is a example of Kafka Connector to the openweathermap API.
+
 [openweathermap](https://openweathermap.org/)
 
 ### Deploy
@@ -8,7 +9,7 @@ This is a example of Kafka Connector to the openweathermap API.
     mvn package
 
 
-### Configure
+### run Docker
 
 ```
 docker run -it --rm --name weather-connect-demo -p 8083:8083 -e GROUP_ID=1 \
@@ -20,7 +21,7 @@ docker run -it --rm --name weather-connect-demo -p 8083:8083 -e GROUP_ID=1 \
     debezium/connect:latest
 ```
     
-### run
+### Configure
 
 ```
 {
