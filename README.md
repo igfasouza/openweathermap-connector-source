@@ -25,23 +25,21 @@ docker run -it --rm --name weather-connect-demo -p 8083:8083 -e GROUP_ID=1 \
 
 ```
 {
-   “name”: “weathermap-connector”,
-  “Config”: {
-      “connector-class”:”com.openweathermap.kafka.connect.WeatherAPIConnector
-”,
-      “Value.converter”:”com.openweathermap.kafka.connect.converter.StringConverter
-”,
-      “value.converter.encoding”:”UTF-8”,
-      “tasks.max”: “1”,
-      “open.weather.api.key”:”12312312312312313123123123123”,
-      “cities”: “Ireland, Brazil”,
-      “kafka.topic”:”weather”,
-      “name”:”weather-connector”,
-      “transform”:”ReplaceField,IntegrityCheck”,
-      “transform.ReplaceField.type”:”com.openweathermap.kafka.connect.transform.ReplaceField$Value”,
-      “transform.ReplaceField.blacklist”:”main”,
-      “transform.IntegrityCheck.type”:”com.openweathermap.kafka.connect.transform.IntegrityCheck$Value”,
-       “transform.IntegrityCheck.field”:”integrity”,
+   "name": "weathermap-connector",
+  "config": {
+      "connector.class":"com.openweathermap.kafka.connect.WeatherAPIConnector",
+      "Value.converter":"com.openweathermap.kafka.connect.converter.StringConverter",
+      "value.converter.encoding":"UTF-8",
+      "tasks.max": "1",
+      "open.weather.api.key":"12312312312312313123123123123",
+      "cities": "Ireland, Brazil",
+      "kafka.topic":"weather",
+      "name":"weathermap-connector",
+      "transform":"ReplaceField,IntegrityCheck",
+      "transform.ReplaceField.type":"com.openweathermap.kafka.connect.transform.ReplaceField$Value",
+      "transform.ReplaceField.blacklist":"main",
+      "transform.IntegrityCheck.type":"com.openweathermap.kafka.connect.transform.IntegrityCheck$Value",
+       "transform.IntegrityCheck.field":"integrity"
   }
 }
 ```
